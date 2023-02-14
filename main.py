@@ -1,1 +1,4 @@
-print(5+5)
+x = 5
+y = 10
+c = x*y
+print(c)
