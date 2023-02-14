@@ -1,4 +1,4 @@
 x = 15
-y = 10
+y = 5
 c = x*y
 print(c)
