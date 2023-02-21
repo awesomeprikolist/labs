@@ -1,6 +1,6 @@
 a = input()
-password = '123qwe321'
-if a == password:
+b = input()
+if a == b:
     print('Пароль принят')
 else:
     print('Пароль не принят')
