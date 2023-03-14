@@ -1,9 +1,9 @@
 print('Математика для детей: ')
-print('Решите пример: 3 + 5 = ? ')
+x= 'Решите пример: 3 + 5 = '
 k = 0
-x = int(input())
+user_answer = input(x)
 for i in range (0,3):
-    if x == 8:
+    if user_answer == '8':
         print('Правильно!')
         break
     else:
