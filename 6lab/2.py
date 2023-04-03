@@ -9,6 +9,7 @@ letters = {
     'Ы': 4, 'Ь': 3, 'Э': 8, 'Ю': 8,
     'Я': 3
 }
+
 word = input("Введите слово: ")
 total_points = 0
 for letter in word.upper():
