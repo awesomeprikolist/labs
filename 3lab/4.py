@@ -9,7 +9,7 @@ for i in range (0,3):
     else:
         k += 1
         print('Ответ неверный')
-        print('Решите пример: 3 + 5 = ? ')
-        x = int(input())
+        y = 'Решите пример: 3 + 5 = '
+        user_answer = input(y)
     if k == 3:
         print("Вы проиграли =(")
