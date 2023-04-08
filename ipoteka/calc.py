@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import
-        
+from tkinter import ttk
+
 window = tk.Tk()
 window.title("Ипотечный калькулятор")
 
@@ -21,7 +21,7 @@ scale1.grid(row=2, column=1)
 
 label4 = tk.Label(window, text="Процентная ставка:")
 label4.grid(row=3, column=0)
-label5 = tk.Label(window, text="6.4%")  
+label5 = tk.Label(window, text="6.4%")
 label5.grid(row=3, column=1)
 
 label6 = tk.Label(window, text="Тип кредита:")
@@ -35,30 +35,31 @@ label7.grid(row=5, column=0)
 entry3 = tk.Entry(window)
 entry3.grid(row=5, column=1)
 
+
 def calculate():
     price = float(entry1.get())
-    down_payment = float(entry2.get())
-    loan_term = scale1.get()
-    interest_rate = 6.4  
-    loan_type = var1.get()
-    
-    if price <= 0 or down_payment < 0.15 * price or loan_term <= 0:
+    vznos = float(entry2.get())
+    srok = scale1.get()
+    stavka = 6.4
+    credit_type = var1.get()
+
+    if price <= 0 or vznos < 0.15 * price or srok <= 0:
         entry3.delete(0, tk.END)
         entry3.insert(0, "Неверные данные")
-        
-    loan_amount = price - down_payment
-    monthly_rate = interest_rate / 12 / 100
-    number_of_payments = loan_term * 12
-    monthly_payment = loan_amount * (monthly_rate * (1 + monthly_rate) ** number_of_payments) / (
-                (1 + monthly_rate) ** number_of_payments - 1)
-    
-    if loan_type == 1:
-        monthly_payment = monthly_payment * 0.9  
+
+    credit_sum = price - vznos
+    monthly_stavka = stavka / 12 / 100
+    number_of_payments = srok * 12
+    monthly_payment = credit_sum * (monthly_stavka * (1 + monthly_stavka) ** number_of_payments) / (
+            (1 + monthly_stavka) ** number_of_payments - 1)
+
+    if credit_type == 1:
+        monthly_payment = monthly_payment * 0.9
 
     monthly_payment = round(monthly_payment)
 
     entry3.delete(0, tk.END)
-    entry3.insert(0, f"{monthly_payment} руб.")  
+    entry3.insert(0, f"{monthly_payment} руб.")
 
 
 button = tk.Button(window, text="Рассчитать", command=calculate)
