@@ -8,6 +8,7 @@ def divide(x):
         print("Ошибка: На ноль делить нельзя.")
         return None
 
+
 user_input = input("Введите число: ")
 
 try:

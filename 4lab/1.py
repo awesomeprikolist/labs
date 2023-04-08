@@ -6,8 +6,9 @@ def divide(x):
         print('Число не делится на 3')
         return None
 
-user_input= int(input('Введите число: '))
-number = float(user_input)
+
+user_input = int(input('Введите число: '))
+number = int(user_input)
 result = divide(number)
 if result is not None:
     print(result)
